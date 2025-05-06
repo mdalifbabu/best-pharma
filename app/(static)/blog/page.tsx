@@ -23,7 +23,7 @@ export default function BlogPage() {
               <h3 className="text-xl font-semibold my-2">{post.title}</h3>
               <p className="text-gray-600 mb-4">{post.excerpt}</p>
               <Link 
-                href={`/blog/item/${post.id}`}
+                href={`/blog/${post.id}`}
                 className="text-green-600 hover:text-green-800 font-medium"
               >
                 আরও পড়ুন

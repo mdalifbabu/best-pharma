@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import farm from "@/app/assets/images/farm.avif"
 
 export default function AboutPage() {
   return (
@@ -8,7 +9,7 @@ export default function AboutPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
           <Image 
-            src="/assets/images/about.jpg" 
+            src={farm}
             alt="About Best Pharma" 
             width={600} 
             height={400} 

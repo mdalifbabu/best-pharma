@@ -1,3 +1,4 @@
+import bestpharma from "@/app/assets/images/bestpharma.ico";
 import "@/app/assets/styles/globals.css";
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
@@ -10,6 +11,9 @@ export const metadata: Metadata = {
   title: "বেস্ট ফার্মা - পশুপালনের জন্য সেরা পণ্য",
   description:
     "গরু, ছাগল, ঘোড়া, হাঁস, মুরগির জন্য উন্নতমানের ওষুধ ও পশুপালন সামগ্রী",
+  icons: {
+    icon: bestpharma.src,
+  },
 };
 
 export default function RootLayout({
