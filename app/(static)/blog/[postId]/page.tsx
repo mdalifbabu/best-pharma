@@ -2,13 +2,19 @@ import { notFound } from 'next/navigation'
 import { blogPosts } from '@/app/data/blogPosts'
 import Image from 'next/image'
 
+interface PageProps {
+  params: {
+    postId: string
+  }
+}
+
 export async function generateStaticParams() {
   return blogPosts.map(post => ({
     postId: post.id
   }))
 }
 
-export default function BlogPostPage({ params }: { params: { postId: string } }) {
+export default function BlogPostPage({ params }: PageProps) {
   const post = blogPosts.find(p => p.id === params.postId)
   
   if (!post) {
@@ -33,6 +39,7 @@ export default function BlogPostPage({ params }: { params: { postId: string } })
             alt={post.title}
             fill
             className="object-cover"
+            priority
           />
         </div>
         
