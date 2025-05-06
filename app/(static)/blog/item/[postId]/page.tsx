@@ -91,7 +91,7 @@ export default function BlogPostPage({ params }: Props) {
                 <div className="p-4">
                   <h3 className="font-semibold mb-2">{relatedPost.title}</h3>
                   <a
-                    href={`/blog/${relatedPost.id}`}
+                    href={`/blog/item/${relatedPost.id}`}
                     className="text-green-600 hover:text-green-800 text-sm font-medium"
                   >
                     পড়ুন →
