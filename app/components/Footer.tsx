@@ -106,10 +106,10 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">যোগাযোগ</h4>
             <address className="text-gray-300 not-italic">
-              <p>১২৩ ফার্মাসি রোড</p>
-              <p>ঢাকা - ১২১৬</p>
+              <p>মালগ্রাম</p>
+              <p>বগুড়া - ৫৮০০</p>
               <p>বাংলাদেশ</p>
-              <p>ফোন: +৮৮০ ১২৩৪৫৬৭৮৯</p>
+              <p>ফোন: +৮৮০ ১৭১১৫৭১০৮৫</p>
               <p>ইমেইল: info@bestpharma.com</p>
             </address>
           </div>
