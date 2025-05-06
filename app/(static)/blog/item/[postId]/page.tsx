@@ -2,36 +2,37 @@ import { blogPosts } from "@/app/data/blogPosts";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-// Define proper types for your page props
-type Props = {
-  params: { postId: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+// 1. Define the proper type for your page parameters
+interface PageParams {
+  postId: string;
+}
 
-// Generate static paths at build time
-export async function generateStaticParams() {
+// 2. Define the page props type
+interface PageProps {
+  params: PageParams;
+  searchParams?: { [key: string]: string | string[] | undefined };
+}
+
+// 3. Generate static paths at build time
+export async function generateStaticParams(): Promise<PageParams[]> {
   return blogPosts.map((post) => ({
     postId: post.id,
   }));
 }
 
-// Set dynamic metadata if needed (optional)
-export async function generateMetadata({
-  params,
-}: {
-  params: { postId: string };
-}) {
+// 4. Optional: Generate metadata for SEO
+export async function generateMetadata({ params }: { params: PageParams }) {
   const post = blogPosts.find((p) => p.id === params.postId);
-
-  if (!post) return {};
-
-  return {
-    title: post.title,
-    description: post.excerpt,
-  };
+  return post
+    ? {
+        title: post.title,
+        description: post.excerpt,
+      }
+    : {};
 }
 
-export default function BlogPostPage({ params }: Props) {
+// 5. The page component
+export default function BlogPostPage({ params }: PageProps) {
   const post = blogPosts.find((p) => p.id === params.postId);
 
   if (!post) {
